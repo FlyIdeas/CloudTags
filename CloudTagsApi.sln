@@ -1,0 +1,47 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26730.3
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CloudTagsApi", "CloudTagsApi\CloudTagsApi.csproj", "{DFAAC8C4-D598-40BF-88F3-04DD9E0ED13F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Client", "Client", "{A3551A15-4BD7-4219-BDEB-21532B0DD835}"
+	ProjectSection(SolutionItems) = preProject
+		Client\admin.html = Client\admin.html
+		Client\index.html = Client\index.html
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "styles", "styles", "{AC1C3AF8-561E-4D2F-B057-A9F3AF8C3DE5}"
+	ProjectSection(SolutionItems) = preProject
+		Client\styles\common.css = Client\styles\common.css
+		Client\styles\jqcloud.min.css = Client\styles\jqcloud.min.css
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "scripts", "scripts", "{1BA518C8-7EFD-4930-AC7A-16C73392FD8F}"
+	ProjectSection(SolutionItems) = preProject
+		Client\scripts\jqcloud.min.js = Client\scripts\jqcloud.min.js
+		Client\scripts\jquery-3.3.1.min.js = Client\scripts\jquery-3.3.1.min.js
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DFAAC8C4-D598-40BF-88F3-04DD9E0ED13F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DFAAC8C4-D598-40BF-88F3-04DD9E0ED13F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DFAAC8C4-D598-40BF-88F3-04DD9E0ED13F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DFAAC8C4-D598-40BF-88F3-04DD9E0ED13F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{AC1C3AF8-561E-4D2F-B057-A9F3AF8C3DE5} = {A3551A15-4BD7-4219-BDEB-21532B0DD835}
+		{1BA518C8-7EFD-4930-AC7A-16C73392FD8F} = {A3551A15-4BD7-4219-BDEB-21532B0DD835}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9EF8A50D-503F-4026-8358-E50707789528}
+	EndGlobalSection
+EndGlobal

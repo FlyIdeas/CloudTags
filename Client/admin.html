@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Cloud Tags</title>    
+    <link href="styles/common.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="scripts/jquery-3.3.1.min.js"></script>
+</head>
+<body>
+    <script>      
+        $(document).ready(function () {
+            $("#btn").bind("click", function () {
+                $('#grid tbody').remove();                
+
+                $.ajax({
+                    type: "GET",
+                    url: "http://localhost:60078/api/admin/",
+                    contentType: "application/json; charset=utf-8",
+                    crossDomain: true,
+                    dataType: "json",
+                    success: function (data) {                        
+                        $.each(data, function (index, item) {  
+                            
+                            if ($("#grid tbody").length == 0) {
+                                $("#grid").append("<tbody></tbody>");
+                            }                     
+
+                            var row =
+                                "<tr>" +
+                                "<td>" + item.text + "</td>"
+                                + "<td>" + item.weight + "</td>" +                                
+                                "</tr>";
+
+                            $("#grid tbody").append(row);
+                        });                        
+                    },
+                    error: function (data) {
+                        alert('Error, could not load data!');
+                    }
+                });
+            });
+        });
+    </script>
+
+    <div class="main-area">
+        <div class="group">            
+            <a href="#" id="btn">Update statistic</a>
+        </div>
+        <table id="grid" class="table table-bordered table-condensed table-striped">
+            <thead>
+                <tr>
+                    <th>Word</th>
+                    <th>Count</th>                    
+                </tr>
+            </thead>
+        </table>
+    </div> 
+</body>
+</html>

@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Cloud Tags</title>    
+    <link href="styles/common.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="styles/jqcloud.min.css">
+
+    <script type="text/javascript" src="scripts/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="scripts/jqcloud.min.js"></script>    
+</head>
+<body>
+    <script>      
+        $(document).ready(function () {
+            $("#btn").bind("click", function () {
+                var cloud = $('#cloud');
+                cloud.html('');
+                cloud.jQCloud('destroy');
+
+                var input_url = $("#address").val();
+                $.ajax({
+                    type: "GET",
+                    url: "http://localhost:60078/api/default/",
+                    contentType: "application/json; charset=utf-8",
+                    crossDomain: true,
+                    data: { url: input_url },
+                    dataType: "json",
+                    success: function (data) {
+                        cloud.jQCloud(data, {
+                            width: 500,
+                            height: 350
+                        });
+                    },
+                    error: function (data) {
+                        alert('Error, could not load data!');
+                    }
+                });
+            });
+        });
+    </script>
+
+    <div class="main-area">
+        <div class="group">            
+            <input type="text" placeholder="Enter web address..." id="address" />
+            <a href="#" id="btn">Load</a>
+        </div>
+        <div id="cloud"></div>
+    </div> 
+</body>
+</html>
